@@ -21,7 +21,6 @@ class DiamondWorkflow():
     wf_name = None
     wf_dir = None
     
-
     # --- Init ---------------------------------------------------------------------
     def __init__(self, dagfile="workflow.yml"):
         self.dagfile = dagfile
@@ -124,7 +123,7 @@ class DiamondWorkflow():
                                 .add_outputs(c2, stage_out=False, register_replica=False)\
                                 .add_profiles(Namespace.PEGASUS, key="label", value="cluster-1")
 
-        # Add left Findrange job
+        # Add Analyze job
         d = File("f.d")
         analyze_job = Job("analyze")\
                         .add_args("-i", c1, "-i", c2, "-o", d)\
