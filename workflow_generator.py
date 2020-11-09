@@ -32,8 +32,7 @@ class DiamondWorkflow():
     def write(self):
         if not self.sc is None:
             self.sc.write()
-        if not self.props is None:
-            self.props.write()
+        self.props.write()
         self.rc.write()
         self.tc.write()
         self.wf.write()
@@ -129,7 +128,7 @@ class DiamondWorkflow():
         analyze_job = Job("analyze")\
                         .add_args("-i", c1, "-i", c2, "-o", d)\
                         .add_inputs(c1, c2)\
-                        .add_outputs(d, stage_out=True, register_replica=False)\
+                        .add_outputs(d, stage_out=True, register_replica=True)\
                         .add_profiles(Namespace.PEGASUS, key="label", value="cluster-1")
         
         self.wf.add_jobs(preprocess_job, findrange_left_job, findrange_right_job, analyze_job)
@@ -147,11 +146,12 @@ if __name__ == '__main__':
     workflow = DiamondWorkflow(args.output)
 
     if not args.skip_sites_catalog:
-        print("Creating workflow properties...")
-        workflow.create_pegasus_properties()
         print("Creating execution sites...")
         workflow.create_sites_catalog(args.execution_site_name)
 
+    print("Creating workflow properties...")
+    workflow.create_pegasus_properties()
+    
     print("Creating transformation catalog...")
     workflow.create_transformation_catalog(args.execution_site_name)
 
