@@ -25,7 +25,7 @@ class DiamondWorkflow():
     def __init__(self, dagfile="workflow.yml"):
         self.dagfile = dagfile
         self.wf_name = "diamond"
-        self.wf_dir = Path(__file__).parent.resolve()
+        self.wf_dir = str(Path(__file__).parent.resolve())
 
     
     # --- Write files in directory -------------------------------------------------
