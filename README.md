@@ -10,7 +10,7 @@
 
 <b>plan.sh:</b> Consists of all commands to be executed to run the workflow. Takes care of planning the pegasus workflow and initialising where the input files are and where output files should be located after execution of workflow. 
 
-<b>workflow_generator.py:</b> Creates the abstract workflow, the replica catalog, the transformation catalog, and the site catalog. It has three jobs: findrange, preprocess, analyze which are used to create the workflow. 
+<b>workflow_generator.py:</b> Creates the abstract workflow, the replica catalog, the transformation catalog, and the site catalog. There are three jobs: findrange, preprocess analyse. These are used to invoke the executables which are present in bin folder.
 
 <b>bin Folder:</b> Contains the executable scripts: findrange, preprocess, analyze
 
