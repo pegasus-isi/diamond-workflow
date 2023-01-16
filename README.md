@@ -4,7 +4,7 @@
 - Pegasus v5.0+
 - Python 3.6+
 
-![Diamond](https://user-images.githubusercontent.com/36110304/207698312-1c8724d5-7279-403a-81cf-41ea87309f5b.png)
+![diamond-workflow](https://user-images.githubusercontent.com/36110304/212752545-1859e0b2-54a4-45d1-9164-f2fa6265a36a.png)
 
 # File Description
 
